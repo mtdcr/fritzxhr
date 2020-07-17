@@ -27,8 +27,8 @@ outgoing_number = 555666
 data = {
     "Name0": "Doorbell",
     "Num_Org0": "11",
-    "Signal0" = "outNum",
-    "Num_Rep0" = mobile_phone,
+    "Signal0": "outNum",
+    "Num_Rep0": mobile_phone,
     "ringtone0": "3",
     "name": "Door phone",
     "out_num": outgoing_number,
@@ -43,7 +43,7 @@ data = {
 }
 
 fb = FritzXHR(
-    host="https://fritz.box",
+    base_uri="https://fritz.box",
     username="fritzbox-admin",
     password="fritzbox-password",
     verify="/etc/ssl/certs/custom_ca.pem",
@@ -54,6 +54,7 @@ if fb.login():
         fb.set_data(data)
     fb.logout()
 ```
+
 All parameters to `FritzXHR` are optional. See the source code for default values.
 
 The `data` dict above was captured using a web browser like Chrome or Firefox:
